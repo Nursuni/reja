@@ -11,17 +11,21 @@ app.use(express.urlencoded({ extended: true })); //htmldan traditionaldan form r
 // 2: Session code
 // 3: View codes
 app.set("views", "views");
-app.set("view engine", "ejs"); //html frontendni backendda ishlatish uchun
+app.set("view engine", "ejs"); //html frontendni backendda ishlatish uchun //BSSRendering engine
+//Single Page Application (SPA) - bitta html fayl
+//Multi Page Application (MPA) - ko'p html faylgi
 
 // 4: Routing codes
-app.get("/hello", function (req, res) {
-  res.end(`<h1 style="background: red">Hello World by Nursuni!</h1>`);
+app.post("/create-item", (req, res) => {
+  console.log(req.body);
+  res.json({ test: "success" });
 });
 
-app.get("/gift", function (req, res) {
-  res.end(`<h1 style="background: red">siz sovg'alar bo'limidasiz!</h1>`);
+app.get("/", function (req, res) {
+  res.render("harid");
 });
 
+// Server setup
 const server = http.createServer(app);
 let PORT = 3000;
 server.listen(PORT, function () {
