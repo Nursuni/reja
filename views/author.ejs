@@ -1,1 +1,246 @@
-<div>Hello World! You are in authors</div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/main.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Portfolio</title>
+  </head>
+
+  <body>
+    <div class="frame">
+      <div class="main_frame">
+        <div class="left_frame">
+          <div class="left_1">
+            <div class="left_1-1">
+              <img src="images/profile.png" width="156px" height="142px" />
+            </div>
+            <div class="left_1-2"><%= user.name %></div>
+            <div class="left_1-3"><%= user.profession %></div>
+            <div class="left_icons">
+              <a class="link_href" href="">
+                <div class="icon">
+                  <img src="icon/facebook.svg" class="icon-1" />
+                </div>
+              </a>
+              <a class="link_href" href="">
+                <div class="icon">
+                  <img src="icon/instagram.svg" class="icon-1" />
+                </div>
+              </a>
+              <a class="link_href" href="">
+                <div class="icon">
+                  <img src="icon/twitter.svg" class="icon-1" />
+                </div>
+              </a>
+              <a class="link_href" href="">
+                <div class="icon">
+                  <img src="icon/linkeding.svg" class="icon-1" />
+                </div>
+              </a>
+              <a class="link_href" href="">
+                <div class="icon">
+                  <img src="icon/youtube.svg" class="icon-1" />
+                </div>
+              </a>
+              <a class="link_href" href="">
+                <div class="icon">
+                  <img src="icon/dribbble.svg" class="icon-1" />
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="marginer"></div>
+          <div class="left_2">
+            <div class="info-container">
+              <div class="info-row">
+                <span class="info-label">Age:</span>
+                <span class="info-value"><%= user.age %></span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">Residence:</span>
+                <span class="info-value"><%= user.residence %></span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">Freelance:</span>
+                <span class="info-value available">Available</span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">Address:</span>
+                <span class="info-value"><%= user.adress %></span>
+              </div>
+            </div>
+          </div>
+          <div class="marginer"></div>
+          <div class="left_3">
+            <h4 class="section-title">Languages</h4>
+            <div class="skill-row">
+              <div class="skill-value">
+                <p class="skill-label">Uzbek</p>
+                <p class="skill-percentage">100%</p>
+              </div>
+              <div class="progress-bar-container">
+                <div class="progress-fill" style="width: 100%"></div>
+              </div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-value">
+                <p class="skill-label">Korean</p>
+                <p class="skill-percentage">80%</p>
+              </div>
+              <div class="progress-bar-container">
+                <div class="progress-fill" style="width: 80%"></div>
+              </div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-value">
+                <p class="skill-label">English</p>
+                <p class="skill-percentage">60%</p>
+              </div>
+              <div class="progress-bar-container">
+                <div class="progress-fill" style="width: 60%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="marginer"></div>
+          <div class="left_4">
+            <h4 class="section-title">Skills</h4>
+            <div class="skill-row">
+              <div class="skill-value">
+                <p class="skill-label">Html</p>
+                <p class="skill-percentage">100%</p>
+              </div>
+              <div class="progress-bar-container">
+                <div class="progress-fill" style="width: 100%"></div>
+              </div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-value">
+                <p class="skill-label">CSS</p>
+                <p class="skill-percentage">80%</p>
+              </div>
+              <div class="progress-bar-container">
+                <div class="progress-fill" style="width: 80%"></div>
+              </div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-value">
+                <p class="skill-label">JS</p>
+                <p class="skill-percentage">60%</p>
+              </div>
+              <div class="progress-bar-container">
+                <div class="progress-fill" style="width: 60%"></div>
+              </div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-value">
+                <p class="skill-label">NodeJS</p>
+                <p class="skill-percentage">80%</p>
+              </div>
+              <div class="progress-bar-container">
+                <div class="progress-fill" style="width: 80%"></div>
+              </div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-value">
+                <p class="skill-label">Python</p>
+                <p class="skill-percentage">80%</p>
+              </div>
+              <div class="progress-bar-container">
+                <div class="progress-fill" style="width: 80%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="marginer"></div>
+          <div class="left_5">
+            <div class="extra-skills">
+              <h2 class="section-title">Extra Skills</h2>
+              <ul>
+                <li>
+                  <img src="icon/Icons.svg" alt="Icon" class="skill-icon" />
+                  <p>Bootstrap, Materialize</p>
+                </li>
+                <li>
+                  <img src="icon/Icons.svg" alt="Icon" class="skill-icon" />
+                  <p>Stylus, Sass, Less</p>
+                </li>
+                <li>
+                  <img src="icon/Icons.svg" alt="Icon" class="skill-icon" />
+                  <p>Gulp, Webpack, Grunt</p>
+                </li>
+                <li>
+                  <img src="icon/Icons.svg" alt="Icon" class="skill-icon" />
+                  <p>GIT Knowledge</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="midd_frame">
+          <div class="midd_top">
+            <div class="hero-content">
+              <h1>It company</h1>
+              <p>
+                Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Et,
+                Volutpat Feugiat Placerat Lobortis. Natoque Rutrum Semper Sed
+                Suspendisse Nunc Lectus.
+              </p>
+              <a href="#" class="btn-primary"
+                >Hire Me <span class="arrow">&rarr;</span></a
+              >
+            </div>
+            <div class="hero-image">
+              <img src="images/profile2.png" alt="photo" />
+            </div>
+          </div>
+          <div class="midd_services">
+            <div class="mid_content">
+              <h1>My services</h1>
+              <p>
+                Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Et,
+                Volutpat Feugiat Placerat Lobortis. Natoque Rutrum Semper Sed
+                Suspendisse Nunc Lectus.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="right_frame">
+          <div>
+            <img src="btn_icons/home.svg" alt="Icon" class="skill-icon" />
+          </div>
+          <a class="link_href" href="">
+            <div class="icon">
+              <img src="btn_icons/service.svg" class="icon-1" />
+            </div>
+          </a>
+          <a class="link_href" href="">
+            <div class="icon">
+              <img src="btn_icons/blog.svg" class="icon-1" />
+            </div>
+          </a>
+          <a class="link_href" href="">
+            <div class="icon">
+              <img src="btn_icons/portfolio.svg" class="icon-1" />
+            </div>
+          </a>
+          <a class="link_href" href="">
+            <div class="icon">
+              <img src="btn_icons/cv.svg" class="icon-1" />
+            </div>
+          </a>
+          <a class="link_href" href="">
+            <div class="icon">
+              <img src="btn_icons/contact.svg" class="icon-1" />
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
