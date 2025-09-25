@@ -86,15 +86,22 @@
 
 // console.log(countLetter("e", "engineer"));
 
-function countLetter(letter, word, callback) {
-  let count = 0;
-  for (const char of word) {
-    if (char === letter) count++;
+// DEFINE
+function qoldiqliBolish(a, b, callback) {
+  if (b === 0) {
+    callback("Mahraj nolga teng emas!", null);
+  } else {
+    const c = a % b;
+    callback(null, c);
   }
-  callback(count);
 }
 
-// Test
-countLetter("e", "engineer", function (result) {
-  console.log("Natija:", result);
+// CALL
+qoldiqliBolish(7, 5, (err, data) => {
+  if (err) {
+    console.log("ERROR:", err);
+  } else {
+    console.log("data:", data);
+    console.log("MANTIQLAR...");
+  }
 });
