@@ -2,12 +2,12 @@ console.log("FrontEnd javascipti ishga tushdi");
 
 function itemTemplate(item) {
   return ` <li
-            class="List-group-item List-group-item-info d-flex align-items-center justify-content-between"
+            class="list-group-item List-group-item-info d-flex align-items-center justify-content-between"
           >
             <span class="item-text"> ${item.reja} </span>
             <div>
               <button
-                data-id="${item._id%}"
+                data-id="${item._id}"
                 class="edit-me btn btn-secondary btn-sm mr-1"
               >
                 O'zgartirish
@@ -22,6 +22,7 @@ function itemTemplate(item) {
           </li>`;
 }
 let createField = document.getElementById("create-field");
+
 document.getElementById("create-form").addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -31,10 +32,32 @@ document.getElementById("create-form").addEventListener("submit", function (e) {
       document
         .getElementById("item-list")
         .insertAdjacentHTML("beforeend", itemTemplate(response.data));
-        createField.value = '';
-        createField.focus();
+      createField.value = "";
+      createField.focus();
     })
-    .catch((error) => {
-      console.log('Iltimos qaytadan harakat qilib koring');
+    .catch((err) => {
+      console.log("Iltimos qaytadan harakat qilib koring");
     });
+});
+
+document.addEventListener("click", function (e) {
+  //delete operaciyasi
+  console.log(e.target);
+  if (e.target.classList.contains("delete-me")) {
+    if (confirm("Aniq o'chirmoqchimisiz?")) {
+      axios
+        .post("/delete-item", { id: e.target.getAttribute("data-id") })
+        .then((response) => {
+          console.log(response.data);
+          e.target.parentElement.parentElement.remove();
+        })
+        .catch((err) => {
+          console.log("Iltimos qaytadan harakat qilib koring");
+        });
+    }
+  }
+  //edit operaciyasi
+  if (e.target.classList.contains("edit-me")) {
+    alert("No deb javob berildi");
+  }
 });
