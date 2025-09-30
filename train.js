@@ -86,31 +86,82 @@
 
 // console.log(countLetter("e", "engineer"));
 
+const moment = require("moment");
 // DEFINE
-function qoldiqliBolish(a, b, callback) {
-  if (b === 0) {
-    callback("Mahraj nolga teng emas!", null);
-  } else {
-    const c = a % b;
-    callback(null, c);
+// function qoldiqliBolish(a, b, callback) {
+//   if (b === 0) {
+//     callback("Mahraj nolga teng emas!", null);
+//   } else {
+//     const c = a % b;
+//     callback(null, c);
+//   }
+// }
+
+// // CALL
+// qoldiqliBolish(7, 5, (err, data) => {
+//   if (err) {
+//     console.log("ERROR:", err);
+//   } else {
+//     console.log("data:", data);
+//     console.log("MANTIQLAR...");
+//   }
+// });
+
+// function countDigits(str) {
+//   let count = 0;
+//   for (let i = 0; i < str.length; i++) {
+//     if (str[i] >= "0" && str[i] <= "9") count++;
+//   }
+//   return count;
+// }
+// console.log(countDigits("ad2a54y79wet0sfgb9"));
+
+class Shop {
+  constructor(non, lagmon, cola) {
+    this.non = non;
+    this.lagmon = lagmon;
+    this.cola = cola;
+  }
+
+  hozirgiVaqt() {
+    return moment().format("HH:mm");
+  }
+  //qoldiq
+  qoldiq() {
+    console.log(
+      `Hozir ${this.hozirgiVaqt()}da ${this.non}ta non, ${
+        this.lagmon
+      }ta lagmon va ${this.cola}ta cola mavjud`
+    );
+  }
+  //sotish
+  sotish(nomi, miqdor) {
+    if (nomi === "non" && this.non >= miqdor) {
+      this.non -= miqdor;
+      console.log(`${miqdor}ta non sotildi.`);
+    } else if (nomi === "lagmon" && this.lagmon >= miqdor) {
+      this.lagmon -= miqdor;
+      console.log(`${miqdor}ta lagmon sotildi.`);
+    } else if (nomi === "cola" && this.cola >= miqdor) {
+      this.cola -= miqdor;
+      console.log(`${miqdor}ta cola sotildi.`);
+    } else {
+      console.log(`Yetarli ${nomi} yo'q yoki nom noto‘g‘ri!`);
+    }
+  }
+  //qabul
+  qabul(nomi, miqdor) {
+    if (nomi === "non") this.non += miqdor;
+    else if (nomi === "lagmon") this.lagmon += miqdor;
+    else if (nomi === "cola") this.cola += miqdor;
+    else return console.log(`${nomi} degan mahsulot yo'q`);
+
+    console.log(`${miqdor}ta ${nomi} qabul qilindi.`);
   }
 }
 
-// CALL
-qoldiqliBolish(7, 5, (err, data) => {
-  if (err) {
-    console.log("ERROR:", err);
-  } else {
-    console.log("data:", data);
-    console.log("MANTIQLAR...");
-  }
-});
+const shop = new Shop(4, 5, 2);
 
-function countDigits(str) {
-  let count = 0;
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] >= "0" && str[i] <= "9") count++;
-  }
-  return count;
-}
-console.log(countDigits("ad2a54y79wet0sfgb9"));
+shop.sotish("non", 3);
+shop.qabul("cola", 4);
+shop.qoldiq();
