@@ -116,52 +116,59 @@ const moment = require("moment");
 // }
 // console.log(countDigits("ad2a54y79wet0sfgb9"));
 
-class Shop {
-  constructor(non, lagmon, cola) {
-    this.non = non;
-    this.lagmon = lagmon;
-    this.cola = cola;
-  }
+// class Shop {
+//   constructor(non, lagmon, cola) {
+//     this.non = non;
+//     this.lagmon = lagmon;
+//     this.cola = cola;
+//   }
 
-  hozirgiVaqt() {
-    return moment().format("HH:mm");
-  }
-  //qoldiq
-  qoldiq() {
-    console.log(
-      `Hozir ${this.hozirgiVaqt()}da ${this.non}ta non, ${
-        this.lagmon
-      }ta lagmon va ${this.cola}ta cola mavjud`
-    );
-  }
-  //sotish
-  sotish(nomi, miqdor) {
-    if (nomi === "non" && this.non >= miqdor) {
-      this.non -= miqdor;
-      console.log(`${miqdor}ta non sotildi.`);
-    } else if (nomi === "lagmon" && this.lagmon >= miqdor) {
-      this.lagmon -= miqdor;
-      console.log(`${miqdor}ta lagmon sotildi.`);
-    } else if (nomi === "cola" && this.cola >= miqdor) {
-      this.cola -= miqdor;
-      console.log(`${miqdor}ta cola sotildi.`);
-    } else {
-      console.log(`Yetarli ${nomi} yo'q yoki nom noto‘g‘ri!`);
-    }
-  }
-  //qabul
-  qabul(nomi, miqdor) {
-    if (nomi === "non") this.non += miqdor;
-    else if (nomi === "lagmon") this.lagmon += miqdor;
-    else if (nomi === "cola") this.cola += miqdor;
-    else return console.log(`${nomi} degan mahsulot yo'q`);
+//   hozirgiVaqt() {
+//     return moment().format("HH:mm");
+//   }
+//   //qoldiq
+//   qoldiq() {
+//     console.log(
+//       `Hozir ${this.hozirgiVaqt()}da ${this.non}ta non, ${
+//         this.lagmon
+//       }ta lagmon va ${this.cola}ta cola mavjud`
+//     );
+//   }
+//   //sotish
+//   sotish(nomi, miqdor) {
+//     if (nomi === "non" && this.non >= miqdor) {
+//       this.non -= miqdor;
+//       console.log(`${miqdor}ta non sotildi.`);
+//     } else if (nomi === "lagmon" && this.lagmon >= miqdor) {
+//       this.lagmon -= miqdor;
+//       console.log(`${miqdor}ta lagmon sotildi.`);
+//     } else if (nomi === "cola" && this.cola >= miqdor) {
+//       this.cola -= miqdor;
+//       console.log(`${miqdor}ta cola sotildi.`);
+//     } else {
+//       console.log(`Yetarli ${nomi} yo'q yoki nom noto‘g‘ri!`);
+//     }
+//   }
+//   //qabul
+//   qabul(nomi, miqdor) {
+//     if (nomi === "non") this.non += miqdor;
+//     else if (nomi === "lagmon") this.lagmon += miqdor;
+//     else if (nomi === "cola") this.cola += miqdor;
+//     else return console.log(`${nomi} degan mahsulot yo'q`);
 
-    console.log(`${miqdor}ta ${nomi} qabul qilindi.`);
-  }
+//     console.log(`${miqdor}ta ${nomi} qabul qilindi.`);
+//   }
+// }
+
+// const shop = new Shop(4, 5, 2);
+
+// shop.sotish("non", 3);
+// shop.qabul("cola", 4);
+// shop.qoldiq();
+
+function checkContent(str1, str2) {
+  if (str1.length !== str2.length) return false;
+  return str1.split("").sort().join("") === str2.split("").sort().join("");
 }
 
-const shop = new Shop(4, 5, 2);
-
-shop.sotish("non", 3);
-shop.qabul("cola", 4);
-shop.qoldiq();
+console.log(checkContent("mitgroup", "gmtiprou"));
