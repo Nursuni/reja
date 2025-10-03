@@ -24,7 +24,7 @@ function itemTemplate(item) {
 let createField = document.getElementById("create-field");
 
 document.getElementById("create-form").addEventListener("submit", function (e) {
-  e.preventDefault();
+  e.preventDefault(); //stop Traditional API
 
   axios
     .post("/create-item", { reja: createField.value })
@@ -63,6 +63,7 @@ document.addEventListener("click", function (e) {
       "O'zgartirish kiriting",
       e.target.parentElement.parentElement.querySelector(".item-text").innerHTML
     );
+    ``;
     if (userInput) {
       axios
         .post("/edit-item", {
@@ -82,6 +83,7 @@ document.addEventListener("click", function (e) {
   }
 });
 
+//Delete-all
 document.getElementById("clean-all").addEventListener("click", function () {
   axios.post("/delete-all", { delete_all: true }).then((response) => {
     alert(response.data.state);

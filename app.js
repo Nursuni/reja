@@ -17,13 +17,15 @@ fs.readFile("database/user.json", "utf8", (err, data) => {
   }
 });
 //1: Kirish code
-app.use(express.static("public"));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.static("public")); //MiddleWare DP >> public ochiqlandi
+app.use(express.json()); //Middleware DP >> Rest API
+app.use(express.urlencoded({ extended: true })); // Middleware DP > Traditional API
 
 app.set("views", "views");
 app.set("view engine", "ejs");
 
+//Generate REST API
+//STEP1: Frontend > Backend REST API request
 app.post("/create-item", (req, res) => {
   console.log("user entered/ create-item");
   const new_reja = req.body.reja;
