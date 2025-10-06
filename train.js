@@ -9,7 +9,7 @@
 // ];
 
 // //a-yosh
-// //caalback
+// //callback
 // function maslahatBering(a, callback) {
 //   if (typeof a !== "number") callback("iltimos yoshingizni kiriting", null);
 //   else if (a <= 20) callback(null, list[0]);
@@ -74,6 +74,13 @@
 // }
 // run();
 
+/* A-TASK:
+
+Shunday 2 parametrli function tuzing, hamda birinchi parametrdagi letterni ikkinchi parametrdagi sozdan qatnashga sonini return qilishi kerak boladi.
+MASALAN countLetter("e", "engineer") 3ni return qiladi.
+
+*/
+
 // function countLetter(letter, word) {
 //   let count = 0;
 //   for (let i = 0; i < word.length; i++) {
@@ -85,6 +92,38 @@
 // }
 
 // console.log(countLetter("e", "engineer"));
+
+/* TASK B
+
+Shunday, function tuzingki, bu function yagona parametrga ega bo'lib
+string tarkibidagi sonlar miqdorini qaytarsin
+
+Masalan: countDigits("ad2a54y79wet0sfgb9")
+Yuqoridagi string tarkibida 7 dona raqam qatnashganligi uchun, natija 7 qaytadi */
+
+// function countDigits(str) {
+//   let count = 0;
+//   for (let i = 0; i < str.length; i++) {
+//     if (str[i] >= "0" && str[i] <= "9") count++;
+//   }
+//   return count;
+// }
+// console.log(countDigits("ad2a54y79wet0sfgb9"));
+
+/* TASK-C
+
+Shop nomli class tuzing, va bu class 3 xill parametr qabul qilsin.
+Hamda classning quyidagdek 3'ta metodi bo'lsin:
+1) qoldiq 2) sotish 3) qabul
+Har bir metod ishga tushgan vaqtda log qilinsin
+
+MASALAN:
+const shop = new Shop(4, 5, 2)
+shop.qoldiq();
+natija qaytishi kerak: Hozir 20: 40'da 4'ta non, 5'ta lag'mon va 2'ta cola mavjud
+
+shop.sotish("non", 3); & shop.qabul("cola", 4); & shop.qoldiq();
+Natija qaytishi kerak: Hozir 20:50da 1ta non, 5ta lag'mon va 6ta cola mavjud! */
 
 const moment = require("moment");
 // DEFINE
@@ -106,15 +145,6 @@ const moment = require("moment");
 //     console.log("MANTIQLAR...");
 //   }
 // });
-
-// function countDigits(str) {
-//   let count = 0;
-//   for (let i = 0; i < str.length; i++) {
-//     if (str[i] >= "0" && str[i] <= "9") count++;
-//   }
-//   return count;
-// }
-// console.log(countDigits("ad2a54y79wet0sfgb9"));
 
 // class Shop {
 //   constructor(non, lagmon, cola) {
@@ -165,6 +195,16 @@ const moment = require("moment");
 // shop.sotish("non", 3);
 // shop.qabul("cola", 4);
 // shop.qoldiq();
+
+/* TASK D
+
+Ikkita parametra ega function tuzing, va functioning
+berilgan birinchi va ikkinchi parametr qiymatlari o'zaro to'liq
+mos kelsa true qiymat qaytarsin
+
+Masalan: checkContent("mitgroup", "gmtiprou");
+Yuqoridagi misolda birinchi va ikkinchi parametr qiymatli bir xil
+ya'ni bir xil harflar qatnashganligi uchun true qiymat qaytaradi. */
 
 function checkContent(str1, str2) {
   if (str1.length !== str2.length) return false;
